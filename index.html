@@ -1,28 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- This is the minified production version of parse js -->
     <script
       type="text/javascript"
       src="https://npmcdn.com/parse/dist/parse.min.js"
     ></script>
-    <script src="node_modules/parse/dist/parse.min.js"></script>
 
-<script>
-Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
-// Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
-Parse.initialize(
-  'lm59RlqT6R3nKbuQEkf9OtoBxz8sB2XnbMYsoYKb', // This is your Application ID
-  'saiHkSrLOlUvI25pF6DV3nteoL9F1HPZVFlBxKqE' // This is your Javascript key
-);
-</script>
-    <title>Facebook</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <style type="text/css">
         * {
     padding: 0;
@@ -208,7 +193,9 @@ footer small {
     </style>
 </head>
 
-<body>
+
+  </head>
+  <body>
     <main>
         <div class="row">
             <div class="col-logo">
@@ -217,19 +204,16 @@ footer small {
             </div>
             <div class="col-form">
                 <div class="form-container">
-                    <form method="post" action="xyz.php">
-                    <input type="text" id="username" placeholder="Email or phone number">
-                    <input type="password" id="password" placeholder="Password">
-                    <button class="btn-login" id="createButton">Login</button>
-                    <a href="#">Forgotten password?</a>
-                    <button class="btn-new">Create new Account</button>
-                </form>
-                </div>
+                  <input id="username" type="text" placeholder="Username" />
+    <input id="email" type="email" placeholder="Email" />
+    <input id="password" type="password" placeholder="Password" />
+    <button id="createButton">Create User</button>
+ </div>
                 <p><a href="#"><b>Create a Page</b></a> for a celebrity, brand or business.</p>
             </div>
         </div>
     </main>
-    <footer>
+     <footer>
         <div class="footer-contents">
             <ol>
                 <li>English (UK)</li>
@@ -289,20 +273,19 @@ footer small {
             <small>Facebook © 2022</small>
         </div>
     </footer>
-
-
-</body>
-<script>
+  </body>
+  <script>
     // Initialize Parse
-    Parse.initialize("lm59RlqT6R3nKbuQEkf9OtoBxz8sB2XnbMYsoYKb", "saiHkSrLOlUvI25pF6DV3nteoL9F1HPZVFlBxKqE"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+    Parse.initialize("YOUR_PARSE_APP_ID", "YOUR_PARSE_JS_KEY"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
     Parse.serverURL = "https://parseapi.back4app.com/";
 
     // Create a new User
     async function createParseUser() {
       // Creates a new Parse "User" object, which is created by default in your Parse app
-      let user = new Parse.Users();
+      let user = new Parse.User();
       // Set the input values to the new "User" object
       user.set("username", document.getElementById("username").value);
+      user.set("email", document.getElementById("email").value);
       user.set("password", document.getElementById("password").value);
       try {
         // Call the save method, which returns the saved object if successful
@@ -326,5 +309,3 @@ footer small {
     });
   </script>
 </html>
-
-
