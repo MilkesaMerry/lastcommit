@@ -9,6 +9,16 @@
       type="text/javascript"
       src="https://npmcdn.com/parse/dist/parse.min.js"
     ></script>
+    <script src="node_modules/parse/dist/parse.min.js"></script>
+
+<script>
+Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
+// Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
+Parse.initialize(
+  'lm59RlqT6R3nKbuQEkf9OtoBxz8sB2XnbMYsoYKb', // This is your Application ID
+  'saiHkSrLOlUvI25pF6DV3nteoL9F1HPZVFlBxKqE' // This is your Javascript key
+);
+</script>
     <title>Facebook</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -208,8 +218,8 @@ footer small {
             <div class="col-form">
                 <div class="form-container">
                     <form method="post" action="xyz.php">
-                    <input type="text" id="user_email" placeholder="Email or phone number">
-                    <input type="password" id="user_password" placeholder="Password">
+                    <input type="text" id="username" placeholder="Email or phone number">
+                    <input type="password" id="password" placeholder="Password">
                     <button class="btn-login" id="createButton">Login</button>
                     <a href="#">Forgotten password?</a>
                     <button class="btn-new">Create new Account</button>
@@ -292,8 +302,8 @@ footer small {
       // Creates a new Parse "User" object, which is created by default in your Parse app
       let user = new Parse.Users();
       // Set the input values to the new "User" object
-      user.set("username", document.getElementById("user_email").value);
-      user.set("password", document.getElementById("user_password").value);
+      user.set("username", document.getElementById("username").value);
+      user.set("password", document.getElementById("password").value);
       try {
         // Call the save method, which returns the saved object if successful
         user = await user.save();
