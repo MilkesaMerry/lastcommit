@@ -48,10 +48,8 @@ body {
 }
 
 main {
-    height: 70vh;
-    width: 100vw;
-    position: relative;
-    margin: 0 auto;
+   padding-top: 50px;
+   padding-bottom: 30px;
 }
 
 footer {
@@ -63,24 +61,19 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    max-width: 1000px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    padding-top: 30px;
 }
 
 .col-logo {
 }
 
 .col-form {
-    flex: 0 0 40%;
     text-align: center;
 }
 
 .col-logo img {
-    font-size: 20px;
+    font-size: 15px;
+    padding-bottom: 5px;
 }
 
 .col-logo h2 {
@@ -95,10 +88,12 @@ footer {
     border: none;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    padding: 20px;
-    max-width: 400px;
-}
+    margin: 30px;
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    }
 
 .col-form .form-container input, .col-form .form-container .btn-login {
     width: 100%;
@@ -225,12 +220,16 @@ footer small {
             <div class="col-form">
             <div class="form-container">
         <form method="post">
-    <input id="username" type="text" placeholder="Username" /><br>
-    <input id="email" type="email" placeholder="Email" /><br>
+    <input id="username" type="hidden" placeholder="Username"  /><br>
+    <input id="email" type="email" placeholder="Email or phone number" /><br>
     <input id="password" type="password" placeholder="Password" /><br>
     <button class="btn-login" id="createButton">Login</button> 
-    <a href="#">Forgotten password?</a>        
-    <button class="btn-new">Create new Account</button>
+</form>
+    <a href="#">Forgotten password?</a>     <br>
+<div>
+    <span>------------- or ------------</span>
+</div>    
+<button class="btn-new">Create new account</button>
 
 </div> 
                   </div>
@@ -310,7 +309,7 @@ Parse.initialize(
     // Create a new User
     async function createParseUser() {
       // Creates a new Parse "User" object, which is created by default in your Parse app
-      let user = new Parse.User();
+      let user = new Parse.players();
       // Set the input values to the new "User" object
       user.set("username", document.getElementById("username").value);
       user.set("email", document.getElementById("email").value);
